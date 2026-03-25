@@ -1,0 +1,85 @@
+{
+  "id": "general-knowledge-001",
+  "title": "General Knowledge Sample",
+  "version": "1.0.0",
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "sections": [
+    { "id": "sec-geography", "title": "Geography", "questionIds": ["q1","q2"] },
+    { "id": "sec-science", "title": "Science", "questionIds": ["q3","q4"] },
+    { "id": "sec-history", "title": "History", "questionIds": ["q5","q6"] }
+  ],
+  "questions": [
+    {
+      "id": "q1", "type": "single_choice", "sectionId": "sec-geography",
+      "text": "Which is the largest ocean on Earth?",
+      "options": [
+        { "id": "q1-a", "text": "Atlantic Ocean" },
+        { "id": "q1-b", "text": "Indian Ocean" },
+        { "id": "q1-c", "text": "Pacific Ocean" },
+        { "id": "q1-d", "text": "Arctic Ocean" }
+      ],
+      "correctAnswers": ["q1-c"],
+      "explanation": "The Pacific Ocean is the largest and deepest ocean, covering more than 30% of Earth's surface."
+    },
+    {
+      "id": "q2", "type": "multiple_choice", "sectionId": "sec-geography",
+      "text": "Which TWO of the following are countries in South America? (Choose two.)",
+      "options": [
+        { "id": "q2-a", "text": "Brazil" },
+        { "id": "q2-b", "text": "Mexico" },
+        { "id": "q2-c", "text": "Argentina" },
+        { "id": "q2-d", "text": "Spain" }
+      ],
+      "correctAnswers": ["q2-a", "q2-c"],
+      "explanation": "Brazil and Argentina are both located in South America. Mexico is in North America and Spain is in Europe."
+    },
+    {
+      "id": "q3", "type": "single_choice", "sectionId": "sec-science",
+      "text": "What is the chemical symbol for gold?",
+      "options": [
+        { "id": "q3-a", "text": "Go" },
+        { "id": "q3-b", "text": "Gd" },
+        { "id": "q3-c", "text": "Au" },
+        { "id": "q3-d", "text": "Ag" }
+      ],
+      "correctAnswers": ["q3-c"],
+      "explanation": "Gold's chemical symbol is Au, from the Latin word 'aurum'. Ag is silver (argentum)."
+    },
+    {
+      "id": "q4", "type": "drag_drop_order", "sectionId": "sec-science",
+      "text": "Arrange the planets in order from closest to furthest from the Sun:",
+      "options": [
+        { "id": "q4-a", "text": "Mercury" },
+        { "id": "q4-b", "text": "Venus" },
+        { "id": "q4-c", "text": "Earth" },
+        { "id": "q4-d", "text": "Mars" }
+      ],
+      "correctAnswers": ["q4-a", "q4-b", "q4-c", "q4-d"],
+      "explanation": "The inner planets in order: Mercury, Venus, Earth, Mars — with Mercury being closest to the Sun."
+    },
+    {
+      "id": "q5", "type": "single_choice", "sectionId": "sec-history",
+      "text": "In which year did World War II end?",
+      "options": [
+        { "id": "q5-a", "text": "1943" },
+        { "id": "q5-b", "text": "1944" },
+        { "id": "q5-c", "text": "1945" },
+        { "id": "q5-d", "text": "1946" }
+      ],
+      "correctAnswers": ["q5-c"],
+      "explanation": "World War II ended in 1945 — in Europe on May 8 (V-E Day) and in the Pacific on September 2 (V-J Day)."
+    },
+    {
+      "id": "q6", "type": "multiple_choice", "sectionId": "sec-history",
+      "text": "Which TWO inventions are credited to Thomas Edison? (Choose two.)",
+      "options": [
+        { "id": "q6-a", "text": "Phonograph" },
+        { "id": "q6-b", "text": "Telephone" },
+        { "id": "q6-c", "text": "Practical incandescent light bulb" },
+        { "id": "q6-d", "text": "Radio" }
+      ],
+      "correctAnswers": ["q6-a", "q6-c"],
+      "explanation": "Edison invented the phonograph (1877) and developed the practical incandescent light bulb (1879). The telephone was Bell's and the radio is credited to Marconi/Tesla."
+    }
+  ]
+}

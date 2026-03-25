@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \":*)",
+      "Bash(python3 -c \":*)",
+      "Bash(cmd.exe /c \"node --version 2>&1 && npm --version 2>&1\")",
+      "Bash(cmd.exe /c \"node -v\")",
+      "Bash(cmd.exe /c \"npm -v\")",
+      "Bash(cmd.exe /c \"where node\")",
+      "Bash(powershell.exe -Command \"node -v; npm -v; where.exe node\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Program Files'' -Directory | Select-Object Name\")",
+      "Bash(powershell.exe -Command \":*)",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Programs'' -Directory | Select-Object Name\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\AppData\\\\Roaming\\\\npm'' -ErrorAction SilentlyContinue | Select-Object -First 5; Test-Path ''C:\\\\nvm''; Test-Path ''C:\\\\nodejs''\")",
+      "Bash(npm list:*)",
+      "Bash(powershell.exe -Command \"Get-Command node | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell.exe -Command \"$env:PATH\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''''C:\\\\Program Files\\\\nodejs'''',''''C:\\\\Program Files \\(x86\\)\\\\nodejs'''',''''C:\\\\Users\\\\Administrator\\\\AppData\\\\Roaming\\\\nvm'''' -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Read(//c/Users/Administrator/**)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" -e \":*)",
+      "Bash(\"/c/Program Files/nodejs/npx.cmd\" expo install react-native-web @react-native-async-storage/async-storage react-native-reanimated react-native-safe-area-context react-native-screens)",
+      "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\Administrator\\\\Documents\\\\VSCode\\\\Projekt 1''; & ''C:\\\\Program Files\\\\nodejs\\\\npx.cmd'' expo install react-native-web ''@react-native-async-storage/async-storage'' react-native-reanimated react-native-safe-area-context react-native-screens 2>&1\")",
+      "Bash(node -e \":*)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}
