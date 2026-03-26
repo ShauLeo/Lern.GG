@@ -6,3 +6,10 @@ web-build/
 *.log
 .DS_Store
 node_modules
+
+# Dev tooling — do not publish
+.claude/
+.claude-flow/
+.mcp.json
+CLAUDE.md
+test.md
