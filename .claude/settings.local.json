@@ -21,7 +21,12 @@
       "Bash(\"/c/Program Files/nodejs/npx.cmd\" expo install react-native-web @react-native-async-storage/async-storage react-native-reanimated react-native-safe-area-context react-native-screens)",
       "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\Administrator\\\\Documents\\\\VSCode\\\\Projekt 1''; & ''C:\\\\Program Files\\\\nodejs\\\\npx.cmd'' expo install react-native-web ''@react-native-async-storage/async-storage'' react-native-reanimated react-native-safe-area-context react-native-screens 2>&1\")",
       "Bash(node -e \":*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(npm install:*)",
+      "Bash(node scripts/extractPdfSample.js)",
+      "Bash(node -e \"const p = require\\(''pdfjs-dist/package.json''\\); console.log\\(p.main, p.exports ? Object.keys\\(p.exports\\).slice\\(0,5\\) : ''no exports''\\)\")",
+      "Bash(node scripts/extractPdfSample.mjs)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

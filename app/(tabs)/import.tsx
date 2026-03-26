@@ -35,7 +35,7 @@ export default function ImportScreen() {
   const dark = useColorScheme() === 'dark';
   const theme = useTheme(dark);
   const router = useRouter();
-  const { importMock, importFromJSON, importFromVCE, finalizeImport } = useExamSet();
+  const { importMock, importFromJSON, importFromVCE, importFromPDF, finalizeImport } = useExamSet();
   const [loadingType, setLoadingType] = useState<string | null>(null);
   const [showSchema, setShowSchema] = useState(false);
 
@@ -85,6 +85,28 @@ export default function ImportScreen() {
     <ScrollView style={[styles.scroll, { backgroundColor: theme.bg }]} contentContainerStyle={styles.container}>
       <Text style={[styles.pageTitle, { color: theme.textPrimary }]}>Import</Text>
       <Text style={[styles.pageSubtitle, { color: theme.textSecondary }]}>Load an exam set to start studying</Text>
+
+      {/* PDF Import */}
+      <View style={[styles.section, { backgroundColor: theme.surface }]}>
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionEmoji}>📋</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={[styles.sectionTitle, { color: theme.textPrimary }]}>Import PDF File</Text>
+            <Text style={[styles.sectionDesc, { color: theme.textSecondary }]}>
+              Upload a PDF exam file — questions are extracted automatically
+            </Text>
+          </View>
+        </View>
+        <ImportButton
+          label="Select .pdf File"
+          color="#F59E0B"
+          loading={loadingType === 'pdf'}
+          onPress={() => run('pdf', importFromPDF)}
+        />
+        <Text style={[styles.pdfNote, { color: theme.textSecondary }]}>
+          Best on web. On mobile, use JSON format instead.
+        </Text>
+      </View>
 
       {/* VCE Import */}
       <View style={[styles.section, { backgroundColor: theme.surface }]}>
@@ -141,7 +163,7 @@ export default function ImportScreen() {
           <View style={{ flex: 1 }}>
             <Text style={[styles.sectionTitle, { color: theme.textPrimary }]}>Try Sample Exam</Text>
             <Text style={[styles.sectionDesc, { color: theme.textSecondary }]}>
-              Load a built-in General Knowledge sample to explore the app
+              Load a built-in CCNA 200-301 sample exam to explore the app
             </Text>
           </View>
         </View>
@@ -166,7 +188,7 @@ export default function ImportScreen() {
             'Upload your .vce file to convert it',
             'Export questions as JSON or PDF',
             'For JSON: use "Import JSON File" above',
-            'For PDF: manually create a JSON from the questions',
+            'For PDF: use "Import PDF File" above (web only)',
           ].map((step, i) => (
             <View key={i} style={styles.step}>
               <View style={[styles.stepNum, { backgroundColor: Colors.warning }]}>
@@ -208,6 +230,7 @@ const styles = StyleSheet.create({
   sectionEmoji: { fontSize: 32, marginTop: 2 },
   sectionTitle: { fontSize: 16, fontWeight: '700', marginBottom: 3 },
   sectionDesc: { fontSize: 13, lineHeight: 19 },
+  pdfNote: { fontSize: 12, textAlign: 'center', marginTop: 10, fontStyle: 'italic' },
   importBtn: { borderRadius: 16, paddingVertical: 14, alignItems: 'center' },
   importBtnText: { color: '#fff', fontSize: 15, fontWeight: '700' },
   schemaToggle: { alignItems: 'center', marginTop: 14 },

@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ExamSet, Session, Bookmark, Stats, SpacedRepStats } from '../models';
+import { ExamSet, Session, Bookmark, Stats, SpacedRepStats, UserSettings } from '../models';
 const KEYS = {
   examSet: (id: string) => `examSet:${id}`,
   examSetIndex: 'examSetIndex',
@@ -9,6 +9,7 @@ const KEYS = {
   bookmarks: 'bookmarks',
   stats: (examSetId: string) => `stats:${examSetId}`,
   spacedRep: (examSetId: string) => `spacedRep:${examSetId}`,
+  settings: 'userSettings',
 };
 
 async function getExamSetIndex(): Promise<string[]> {
@@ -136,4 +137,21 @@ export async function loadSpacedRepStats(examSetId: string): Promise<SpacedRepSt
 }
 export async function saveSpacedRepStats(stats: SpacedRepStats): Promise<void> {
   await AsyncStorage.setItem(KEYS.spacedRep(stats.examSetId), JSON.stringify(stats));
+}
+const DEFAULT_SETTINGS: UserSettings = { dailyGoal: 20, alwaysShowExplanation: false };
+export async function loadSettings(): Promise<UserSettings> {
+  const raw = await AsyncStorage.getItem(KEYS.settings);
+  return raw ? { ...DEFAULT_SETTINGS, ...(JSON.parse(raw) as Partial<UserSettings>) } : DEFAULT_SETTINGS;
+}
+export async function saveSettings(s: UserSettings): Promise<void> {
+  await AsyncStorage.setItem(KEYS.settings, JSON.stringify(s));
+}
+export async function loadAllSessions(): Promise<Session[]> {
+  const ids = await getSessionIds();
+  const sessions: Session[] = [];
+  for (const id of ids) {
+    const raw = await AsyncStorage.getItem(KEYS.session(id));
+    if (raw) sessions.push(JSON.parse(raw) as Session);
+  }
+  return sessions;
 }

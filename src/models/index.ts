@@ -40,3 +40,8 @@ export interface Stats {
   examSetId: string; totalAttempts: number; correctCount: number;
   wrongQuestionIds: string[]; lastStudiedAt: string;
 }
+export interface UserSettings {
+  examDate?: string;              // ISO date 'YYYY-MM-DD'
+  dailyGoal: number;              // questions per day target
+  alwaysShowExplanation: boolean;
+}

@@ -106,7 +106,7 @@ export default function HomeScreen() {
                   </Text>
                 </View>
                 <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>
-                  {examLibrary.length > 1 && (
+                  {examSet && (
                     <TouchableOpacity
                       style={[styles.switchBtn, { borderColor: Colors.primary + '60' }]}
                       onPress={() => setShowLibrary(true)}

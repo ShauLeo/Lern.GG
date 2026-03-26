@@ -22,6 +22,7 @@ export default function TabLayout() {
       <Tabs.Screen name="index" options={{ title: 'Study', tabBarLabel: 'Study', tabBarIcon: ({ color }) => <TabIcon emoji="📚" color={color} /> }} />
       <Tabs.Screen name="progress" options={{ title: 'Progress', tabBarLabel: 'Progress', tabBarIcon: ({ color }) => <TabIcon emoji="📊" color={color} /> }} />
       <Tabs.Screen name="import" options={{ title: 'Import', tabBarLabel: 'Import', tabBarIcon: ({ color }) => <TabIcon emoji="📁" color={color} /> }} />
+      <Tabs.Screen name="settings" options={{ title: 'Settings', tabBarLabel: 'Settings', tabBarIcon: ({ color }) => <TabIcon emoji="⚙️" color={color} /> }} />
     </Tabs>
   );
 }
